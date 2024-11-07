@@ -40,7 +40,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Data flow1').output",
+						"value": "@activity('Data flow1').output.results",
 						"type": "Expression"
 					},
 					"activities": [
