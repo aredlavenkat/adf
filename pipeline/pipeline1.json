@@ -79,8 +79,18 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "CosmosDbSqlApiSource",
+						"preferredRegions": []
+					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "CosmosDbNoSqlContainer1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

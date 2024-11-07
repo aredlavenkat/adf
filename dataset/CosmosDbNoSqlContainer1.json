@@ -1,0 +1,42 @@
+{
+	"name": "CosmosDbNoSqlContainer1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDbNoSql1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Count": {
+					"type": "integer"
+				},
+				"Message": {
+					"type": "string"
+				},
+				"SearchCriteria": {
+					"type": "null"
+				},
+				"Results": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"Make_ID": {
+								"type": "integer"
+							},
+							"Make_Name": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		},
+		"typeProperties": {
+			"collectionName": "cars"
+		}
+	}
+}
