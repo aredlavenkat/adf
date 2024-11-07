@@ -14,7 +14,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "filter1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          SearchCriteria as string,",
@@ -27,7 +31,8 @@
 				"     container: 'cars',",
 				"     storeType: 'oltp',",
 				"     format: 'document',",
-				"     store: 'cosmosDB') ~> source1"
+				"     store: 'cosmosDB') ~> source1",
+				"source1 filter(ERROR_FUNCTION('')) ~> filter1"
 			]
 		}
 	}
