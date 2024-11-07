@@ -13,7 +13,11 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "dataflowsync"
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
 				"parameters{",
@@ -30,7 +34,14 @@
 				"     container: 'cars',",
 				"     storeType: 'oltp',",
 				"     format: 'document',",
-				"     store: 'cosmosDB') ~> source1"
+				"     store: 'cosmosDB') ~> source1",
+				"source1 sink(validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     store: 'cache',",
+				"     format: 'inline',",
+				"     output: false,",
+				"     saveOrder: 1) ~> dataflowsync"
 			]
 		}
 	}
