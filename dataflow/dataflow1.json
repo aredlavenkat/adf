@@ -1,0 +1,28 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"description": "dataflow one description",
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "CosmosDbNoSql1",
+						"type": "LinkedServiceReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     container: 'cars',",
+				"     storeType: 'oltp',",
+				"     format: 'document',",
+				"     store: 'cosmosDB') ~> source1"
+			]
+		}
+	}
+}
