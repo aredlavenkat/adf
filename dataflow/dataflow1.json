@@ -17,6 +17,9 @@
 			"transformations": [
 				{
 					"name": "filter1"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -32,7 +35,15 @@
 				"     storeType: 'oltp',",
 				"     format: 'document',",
 				"     store: 'cosmosDB') ~> source1",
-				"source1 filter(ERROR_FUNCTION('')) ~> filter1"
+				"select1 filter(ERROR_FUNCTION('')) ~> filter1",
+				"source1 select(mapColumn(",
+				"          SearchCriteria,",
+				"          Results,",
+				"          Count,",
+				"          Message",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
