@@ -32,7 +32,7 @@
 				"     storeType: 'oltp',",
 				"     format: 'document',",
 				"     store: 'cosmosDB') ~> source1",
-				"source1 filter(ERROR_FUNCTION('')) ~> filter1"
+				"source1 filter(Count!=0) ~> filter1"
 			]
 		}
 	}
