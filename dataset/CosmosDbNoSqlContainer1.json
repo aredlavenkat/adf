@@ -36,7 +36,7 @@
 			}
 		},
 		"typeProperties": {
-			"collectionName": "cars"
+			"collectionName": "cars_new"
 		}
 	}
 }
