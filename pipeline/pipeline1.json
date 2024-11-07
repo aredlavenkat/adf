@@ -39,6 +39,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('Data flow1').output",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Filter1",
