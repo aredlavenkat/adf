@@ -14,11 +14,12 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "aggregate1"
+				}
+			],
 			"scriptLines": [
-				"parameters{",
-				"     parameter1 as string",
-				"}",
 				"source(output(",
 				"          SearchCriteria as string,",
 				"          Results as (Make_ID as short, Make_Name as string)[],",
@@ -30,7 +31,8 @@
 				"     container: 'cars',",
 				"     storeType: 'oltp',",
 				"     format: 'document',",
-				"     store: 'cosmosDB') ~> source1"
+				"     store: 'cosmosDB') ~> source1",
+				"source1 aggregate() ~> aggregate1"
 			]
 		}
 	}
