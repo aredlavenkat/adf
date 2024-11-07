@@ -89,19 +89,9 @@
 						"type": "CosmosDbSqlApiSource",
 						"preferredRegions": []
 					},
-					"sink": {
-						"type": "CosmosDbSqlApiSink",
-						"writeBehavior": "insert"
-					},
 					"enableStaging": false
 				},
 				"inputs": [
-					{
-						"referenceName": "CosmosDbNoSqlContainer1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
 					{
 						"referenceName": "CosmosDbNoSqlContainer1",
 						"type": "DatasetReference"
