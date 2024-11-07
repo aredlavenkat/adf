@@ -13,15 +13,12 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
-			"transformations": [
+			"sinks": [
 				{
-					"name": "select1"
-				},
-				{
-					"name": "derivedColumn1"
+					"name": "sink1"
 				}
 			],
+			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          SearchCriteria as string,",
@@ -35,15 +32,10 @@
 				"     storeType: 'oltp',",
 				"     format: 'document',",
 				"     store: 'cosmosDB') ~> source1",
-				"source1 select(mapColumn(",
-				"          SearchCriteria,",
-				"          Results,",
-				"          Count,",
-				"          Message",
-				"     ),",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 derive(Count = count_new) ~> derivedColumn1"
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
