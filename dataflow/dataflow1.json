@@ -38,6 +38,7 @@
 				"source1 sink(validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
+				"     keys:['Results','Count'],",
 				"     store: 'cache',",
 				"     format: 'inline',",
 				"     output: false,",
