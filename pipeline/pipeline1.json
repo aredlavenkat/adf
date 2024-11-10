@@ -24,7 +24,6 @@
 						"computeType": "General"
 					},
 					"traceLevel": "Fine",
-					"runConcurrently": false,
 					"continueOnError": true
 				}
 			},
